@@ -1,0 +1,43 @@
+---
+title: "farsinfo"
+author: "yd"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{farsinfo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+*** 
+
+## Aims of the package
+
+This package was created as a course assignment at coursera.com. 
+
+This packages provides several functions for working with data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. Those include functions that read in fars datasets, summarize them, and draw maps of accidents for a given year and state.  
+
+## Accessing th package 
+
+This package is available on github and can be installed directly from there:
+
+    install_github("yuriygdv/farsfunctions")
+    library(farsfunctions)
+
+## Examples 
+
+To generate a summary of accidents for a given year use `fars_summarize_years(year)` where the arfument `year` should be in the numeric format :  
+
+    fars_summarize_years(2015)
+
+To generate a summary of accidents for a multiple years year use a list of years in numeric format: 
+
+    fars_summarize_years(list(2013, 2014, 2015))
+
+To draw a map showing accidents for agiven year in a given state use ` fars_map_state(state, year)` where `state` argument is the number of the state: 
+
+    fars_map_state(6, 2015)
+
+
+## References
+[NHTSA](https://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS))
+
